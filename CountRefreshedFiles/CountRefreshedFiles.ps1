@@ -1,7 +1,7 @@
 #command line parameters
 param(
     [Parameter(Mandatory=$True)] [string]$SourceDir,
-	[Parameter(Mandatory=$True)] [string]$OutFile,
+    [Parameter(Mandatory=$True)] [string]$OutFile,
     [string]$Filter
 )
 
@@ -22,8 +22,8 @@ if (-Not (Test-Path $SourceDir))
 # create out file if it doesn't exist
 if (Test-Path $OutFile)
 {
-	Write-Warning "File $OutFile already exists"
-	Exit
+    Write-Warning "File $OutFile already exists"
+    Exit
 }
 
 # collect all files in source dir recursively
@@ -44,10 +44,10 @@ if ($TotalFilesCount -eq 0)
 "File Name,File State" | Out-File $OutFile
 foreach ($File in $TotalFiles)
 {
-	$TimeGap = (New-TimeSpan -Start $File.LastWriteTime -End (Get-Date)).TotalDays
-	
-	$FileState = "unknown"
-	if ($TimeGap -gt 90)
+    $TimeGap = (New-TimeSpan -Start $File.LastWriteTime -End (Get-Date)).TotalDays
+    
+    $FileState = "unknown"
+    if ($TimeGap -gt 90)
     {
         $FileState = "abandoned"
     }
@@ -60,7 +60,7 @@ foreach ($File in $TotalFiles)
         $FileState = "fresh"
     }
 
-	"$File,$FileState" | Out-File $OutFile -Append
+    "$File,$FileState" | Out-File $OutFile -Append
 }
 
 # count files not older then 90 days from current date
