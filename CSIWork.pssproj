@@ -28,7 +28,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CounRefreshedFiles.ps1" />
+    <Folder Include="CountRefreshedFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CountRefreshedFiles\CountRefreshedFiles.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
