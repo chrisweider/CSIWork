@@ -8,7 +8,7 @@
     <RootNamespace>MyApplication</RootNamespace>
     <AssemblyName>MyApplication</AssemblyName>
     <Name>CSIWork</Name>
-    <DebugArguments>C:\Users\Olena\SkyDrive\Pictures\Camera_Roll</DebugArguments>
+    <DebugArguments>-SourceDir "C:\Users\Olena\SkyDrive\Pictures\Camera_Roll" -OutFile "d:\temp\OutFile.csv" -Filter "*.jpg"</DebugArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
